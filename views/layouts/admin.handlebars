@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/css/favi.png" type="image/x-icon">
+	<title>Cricket Scoreboard</title>
+	<style>
+		/* latin */
+		@font-face {
+			font-family: 'Orbitron';
+			font-style: normal;
+			font-weight: 400;
+			src: url(https://fonts.gstatic.com/s/orbitron/v16/yMJMMIlzdpvBhQQL_SC3X9yhF25-T1nyGy6BoWgz.woff2) format('woff2');
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+	</style>
+
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+	{{> admin/admin-nav}}
+
+	<div class="container mt-3" style="color: white;">
+		<div id="main-div-one" style="display: none;">{{{body}}}</div>
+		<div id="loading-main" style="display: none;">
+			<div class="row" id="loading-div" style="margin-top: 23%;">
+				<div class="col-5"></div>
+				<div class="col-5"><h1 id="loading-heading">Loading...</h1></div>
+			</div>
+		</div>
+	</div>
+
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/index.js"></script>
+</body>
+</html>

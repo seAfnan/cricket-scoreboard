@@ -1,0 +1,161 @@
+		<button class="btn btn-sm btn-outline-light mb-4" id="loginBtn" onclick="loginModal()">LOGIN</button>
+		<button id="stopBufferBtn" onclick="stopBuffering()" class="btn btn-sm btn-outline-danger text-white mb-4">STOP LIVE</button>
+		<button id="startBufferBtn" onclick="startBuffering()" class="btn btn-sm btn-outline-success text-white mb-4">GO LIVE</button>
+		<div class="video__icon">
+			<div class="circle--outer"></div>
+			<div class="circle--inner"></div>
+		</div>
+		<button onclick="registerModal()" id="registerBtn" class="btn btn-sm float-right btn-outline-light">REGISTER</button>
+		<div id="result" style="display: none;">
+			<div class="row">
+				<div class="col-lg-2 col-md-1 col-sm-1 col-0"></div>
+				<div class="col-lg-10 col-md-10 col-sm-10 col-10 final-result"></div>
+			</div>
+			<div class="row">
+				<div class="col-lg-2 col-md-1 col-sm-1 col-0"></div>
+				<div class="col-lg-5 col-md-5 col-sm-5 col-10">
+					<div class="result-t teamOneName">One Team one name here to check</div>
+					<div class="result-h"><span>Score:</span> <span class="result-d result-score-1">234</span></div>
+					<div class="result-h"><span>Wickets:</span> <span class="result-d result-wicket-1">04</span></div>
+					<!-- <div class="result-h"><span>Overs:</span> <span class="result-d result-over-1">24</span></div> -->
+				</div>
+				<div class="col-lg-5 col-md-5 col-sm-5 col-10">
+					<div class="result-t teamTwoName">One Team two name here to check</div>
+					<div class="result-h"><span>Score:</span> <span class="result-d result-score-2">234</span></div>
+					<div class="result-h"><span>Wickets:</span> <span class="result-d result-wicket-2">04</span></div>
+					<!-- <div class="result-h"><span>Overs:</span> <span class="result-d result-over-2">24</span></div> -->
+				</div>
+			</div>
+		</div>
+
+		<div class="row hideRow">
+			<div class="col-lg-1 col-md-0 col-sm-0 col-0 first-div"></div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-4 first-font second-div">
+				<div class="n-font n-fontt text-left" style="letter-spacing: 2px;">Overs<span style="font-size: 20px; font-family: verdana;" class="tOvers"></span></div><span class="overId">00</span>
+				<div class="n-font to-win-class text-left" style="letter-spacing: 2px;">To win</div><span class="toWin">000</span>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-12 second-font third-div">
+				<div class="t-font text-left" style="letter-spacing: 2px;">Team Name here</div><span id="scoreId">000</span>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-2 col-2 first-font fifth-div"></div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-5 first-font fifth-div">
+				<div class="n-font text-left" style="letter-spacing: 2px;">Overs<span style="font-size: 18px; font-family: verdana;" class="tOvers"></span></div><span class="overId">00</span>
+				<div class="n-font to-win-class text-left">To win</div><span class="toWin">000</span>
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2 col-5 first-font forth-div div-right">
+				<div class="n-font text-left" style="letter-spacing: 2px;">Wickets</div><span class="wicketsId">00</span>
+				<div class="n-font to-win-class text-left" style="letter-spacing: 3px;">1<span style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">st</span>INNS</div><span id="targetId">000</span>
+			</div>
+			<div class="col-12 batsman-class first-font">
+				<div class="row">
+					<div class="col-6 text-center">
+						<span class="n-font" style="letter-spacing: 2px;">BAT</span><span class="n-font text-warning" id="batsmanOneId"> 0 </span><span class="batsman-scores" id="batsmanOneScore">(0)</span>
+					</div>
+					<div class="col-6 text-center">
+						<span class="n-font" style="letter-spacing: 2px;">BAT</span><span class="n-font text-warning" id="batsmanTwoId"> 0 </span><span class="batsman-scores" id="batsmanTwoScore">(0)</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 batsman-class first-font">
+				<div class="col-12 text-center">
+					<span class="n-font" style="letter-spacing: 2px;">LASTMAN </span><span class="batsman-scores" id="lastmanScore">(0)</span>
+				</div>
+			</div>
+			<div class="col-12 batsman-class extra-class first-font">
+				<div class="col-12 text-center">
+					<span class="n-font" style="letter-spacing: 2px;">EXTRA </span><span class="batsman-scores" id="extraScore">(0)</span>
+				</div>
+			</div>
+		</div>
+		{{!-- <div class="row hideRow">
+			<div class="col-12 text-center">
+				<div class="row">
+					<div class="col-4"></div>
+					<div class="col-4 font-bot" id="teamName">Team Name</div>
+					<div class="col-4"></div>
+				</div>
+				<div class="row pl-4 pr-4 pb-2 pt-2">
+					<div class="col-4 font-top heading-border">BAT- <span id="batsmanOneId"></span></div>
+					<div class="col-4 font-top heading-border">TOTAL</div>
+					<div class="col-4 font-top heading-border">BAT- <span id="batsmanTwoId"></span></div>
+				</div>
+				<div class="row pl-4 pr-4 pb-3 pt-1">
+					<div class="col-4 font-bot bot-border"><span id="batsmanOneScore">(0)</span></div>
+					<div class="col-4 font-bot" style="background: hsla(150, 95%, 15%, 1);" id="scoreId">000</div>
+					<div class="col-4 font-bot bot-border"><span id="batsmanTwoScore">(0)</span></div>
+				</div>
+				<div class="row pl-4 pr-4 pb-2">
+					<div class="col-4 font-top heading-border">LASTMAN</div>
+					<div class="col-4 font-top heading-border">WKTS</div>
+					<div class="col-4 font-top heading-border">1st INNS</div>
+				</div>
+				<div class="row pl-4 pr-4 pb-2 pt-1">
+					<div class="col-4 font-bot bot-border"><span id="lastmanScore">(0)</span></div>
+					<div class="col-4 font-bot bot-border"><span id="wicketId">00</span></div>
+					<div class="col-4 font-bot bot-border"><span id="targetId">000</span></div>
+				</div>
+				<div class="row pl-4 pr-4 pb-4">
+					<div class="col-4 font-top border-left">OVERS<h6 class="font-bot-over"><span id="overId">00</span> / <span id="totalOvers"></span></h6></div>
+					<div class="col-4 font-top border-left border-right">EXTRA <h6 class="font-bot" id="extraScore">00</h6></div>
+					<div class="col-4 font-top border-right">TO WIN <h6 class="font-bot" id="toWinId"></h6></div>
+				</div>
+			</div>
+		</div> --}}
+
+		<!-- The Modal -->
+		<div class="modal fade" id="loginModal" style="color: black;">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+
+		      <!-- Modal Header -->
+		      <div class="modal-header">
+		        <h5 class="modal-title">Login</h5>
+		      </div>
+					<p class="text-danger ml-3 mr-2" id="loggedOnSomeoneNoti"></p>
+
+		      <!-- Modal body -->
+		      <div class="modal-body">
+		        <div class="form-group">
+						  <input type="password" class="form-control" onchange="login()" id="pin" placeholder="PIN">
+						</div>
+		      </div>
+
+		      <!-- Modal footer -->
+		      <div class="modal-footer">
+		        <h6 class="text-danger" id="loginPINError"></h6>
+		      </div>
+
+		    </div>
+		  </div>
+		</div>
+
+		<!-- The Modal -->
+		<div class="modal fade" id="registerModal" style="color: black;">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+
+		      <!-- Modal Header -->
+		      <div class="modal-header">
+		        <h5 class="modal-title">Admin</h5>
+		      </div>
+
+		      <!-- Modal body -->
+		      <div class="modal-body">
+		        <div class="form-group">
+						  <input type="password" class="form-control" onchange="register()" id="pin2" placeholder="Admin PIN">
+						</div>
+		      </div>
+
+		      <!-- Modal footer -->
+		      <div class="modal-footer">
+		        <h6 class="text-danger" id="registerPINError"></h6>
+		      </div>
+
+		    </div>
+		  </div>
+		</div>
+		{{!-- footer --}}
+		<div class="row mt-2">
+			<div class="col-lg-3 col-md-2 col-sm-1 col-xs-1 mt-2"></div>
+			<div class="col-lg-5 col-md-6 col-sm-11 col-xs-11 mt-2 text-center text-light" id="clubnamediv"><h5 id="clubname">Cricket Club</h5><h5 id="clubname">@seAfnan</h5></div>
+		</div>

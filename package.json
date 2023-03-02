@@ -1,0 +1,31 @@
+{
+  "name": "scoreboard",
+  "version": "1.0.0",
+  "description": "this is the cricket-scoreboard project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "SCOREBOARD"
+  ],
+  "author": "afnan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "jquery": "^3.5.1",
+    "jsdom": "^16.2.2",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.16",
+    "passport-local": "^1.0.0",
+    "spawn-npm-install": "^1.2.0",
+    "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master",
+    "ws": "^7.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

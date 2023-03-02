@@ -1,0 +1,562 @@
+@font-face{
+ font-family:'digital-7';
+ src: url('../fonts/digital-7.ttf');
+}
+body{
+	background: hsla(180, 95%, 15%, 1);
+}
+.heading-border {
+	border-left: 1px solid white; border-right: 1px solid white; border-top: 1px solid white;
+}
+
+.bot-border {
+	border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white;
+}
+
+@media (min-width: 50px) and (max-width: 399px) {
+	/* this sector is for admin page */
+	.font-top {
+		font-size: 16px;
+	}
+	.font-bot {
+		font-size: 23px;
+		font-family: Orbitron, sans-serif;
+	}
+	.font-bot-over {
+		font-size: 18px;
+		font-family: Orbitron, sans-serif;
+	}
+	.font-score {
+		font-size: 27px;
+		font-family: Orbitron, sans-serif;
+	}
+	.marTopDiv {
+		margin-top: 15px;
+	}
+	/* ---------------------------- */
+
+
+
+
+
+	
+	#checkcolor {
+		background: yellow;
+	}
+	.second-div {
+		display: none;
+	}
+	.third-div-index {
+		margin-top: -30px;
+	}
+	.third-div {
+		text-align: center;
+	}
+	.forth-div {
+		display: block;
+		margin-left: 20px;
+		max-width: 130px;
+	}
+	.fifth-div {
+		display: block;
+		margin-left: -5px;
+	}
+	.first-font {
+		font-family: 'digital-7', sans-serif;
+		font-size: 3em;
+	}
+	.second-font {
+		font-family: 'digital-7', sans-serif;
+		font-size: 7em;
+	}
+	.n-font {
+		font-size: 20px;
+		margin-bottom: -10px;
+	}
+	.n-fontt {
+		margin-top: -30px;
+	}
+	.maL-left {
+		margin-left: 0px;
+	}
+	.maL--left {
+		margin-left: 0px;
+	}
+	.t-font {
+		font-size: 20px;
+		text-align: center !important;
+		margin-bottom: -30px;
+	}
+	.result-h {
+		font-family: 'digital-7', sans-serif;
+		font-size: 32px;
+		margin-left: 45px;
+	}
+	.result-d {
+		color: lightgrey;
+		font-size: 25px;
+	}
+	.result-t {
+		color: lightgray;
+		font-size: 25px;
+		margin-left: 45px;
+	}
+	/* #clubname {
+		font-size: 25px;
+	} */
+	#clubnamediv {
+		min-width: 200px;
+		text-align: center !important;
+	}
+	.batsman-class {
+		margin-top: -20px;
+	}
+	.batsman-scores {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: large;
+	}
+	.to-win-class {
+		margin-top: 20px;
+	}
+	.extra-class {
+		margin-top: -35px;
+	}
+}
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (min-width: 400px) and (max-width: 575px) {
+	.font-top {
+		font-size: 16px;
+	}
+	.font-bot {
+		font-size: 23px;
+		font-family: Orbitron, sans-serif;
+	}
+	.font-bot-over {
+		font-size: 18px;
+		font-family: Orbitron, sans-serif;
+	}
+	.font-score {
+		font-size: 27px;
+		font-family: Orbitron, sans-serif;
+	}
+
+
+
+
+
+	#checkcolor {
+		background: blue;
+	}
+	.second-div {
+		display: none;
+	}
+	.third-div-index {
+		margin-top: -30px;
+	}
+	.third-div {
+		text-align: center;
+	}
+	.forth-div {
+		display: block;
+	}
+	.fifth-div {
+		display: block;
+	}
+
+	.first-font {
+		font-family: 'digital-7', sans-serif;
+		font-size: 3em;
+	}
+	.second-font {
+		font-family: 'digital-7', sans-serif;
+		font-size: 7em;
+	}
+	.n-font {
+		font-size: 20px;
+		margin-bottom: -10px;
+	}
+	.n-fontt {
+		margin-top: -30px;
+	}
+	.maL-left {
+		margin-left: 0px;
+	}
+	.maL--left {
+		margin-left: 0px;
+	}
+	.t-font {
+		font-size: 20px;
+		text-align: center !important;
+		margin-bottom: -30px;
+	}
+	.result-h {
+		font-family: 'digital-7', sans-serif;
+		font-size: 35px;
+		margin-left: 120px;
+	}
+	.result-d {
+		color: lightgrey;
+		font-size: 25px;
+	}
+	.result-t {
+		color: lightgray;
+		font-size: 25px;
+		margin-left: 120px;
+	}
+	/* #clubname {
+		font-size: 30px;
+	} */
+	#clubnamediv {
+		text-align: center !important;
+	}
+	.batsman-class {
+		margin-top: -20px;
+	}
+	.batsman-scores {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: large;
+	}
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767px) {
+	 .font-top {
+		 font-size: 19px;
+	 }
+	 .font-bot {
+		 font-size: 23px;
+		 font-family: Orbitron, sans-serif;
+	 }
+	 .font-bot-over {
+		 font-size: 18px;
+		 font-family: Orbitron, sans-serif;
+	 }
+	 .font-score {
+		 font-size: 27px;
+		 font-family: Orbitron, sans-serif;
+	 }
+
+
+
+
+
+
+	body {
+		margin-left: 50px;
+	}
+	#checkcolor {
+		background: gray;
+	}
+	.second-div {
+		display: block;
+	}
+	.forth-div {
+		display: block;
+	}
+	.fifth-div {
+		display: none;
+	}
+	.first-font {
+		font-family: 'digital-7', sans-serif;
+		font-size: 3em;
+	}
+	.second-font {
+		font-family: 'digital-7', sans-serif;
+		font-size: 8em;
+	}
+	.n-font {
+		font-size: 22px;
+		margin-bottom: -10px;
+	}
+	.maL-left {
+		margin-left: 0px;
+	}
+	.maL--left {
+		margin-left: 0px;
+	}
+	.t-font {
+		font-size: 22px;
+		margin-bottom: -40px;
+	}
+	.result-h {
+		font-family: 'digital-7', sans-serif;
+		font-size: 40px;
+	}
+	.result-d {
+		color: lightgrey;
+		font-size: 30px;
+	}
+	.result-t {
+		color: lightgray;
+		font-size: 30px;
+	}
+	/* #clubname {
+		font-size: 35px;
+	} */
+	#clubnamediv {
+		text-align: center !important;
+	}
+	.batsman-class {
+		margin-top: -5px;
+		margin-left: -20px;
+	}
+	.batsman-scores {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: large;
+	}
+	.to-win-class {
+		margin-top: 30px;
+	}
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) {
+	 .font-top {
+		 font-size: 24px;
+	 }
+	 .font-bot {
+		 font-size: 28px;
+		 font-family: Orbitron, sans-serif;
+	 }
+	 .font-bot-over {
+		 font-size: 22px;
+		 font-family: Orbitron, sans-serif;
+	 }
+	 .font-score {
+		 font-size: 31px;
+		 font-family: Orbitron, sans-serif;
+	 }
+
+
+
+
+
+	body {
+		margin-left: 70px;
+	}
+	#checkcolor {
+		background: green;
+	}
+	.second-div {
+		display: block;
+	}
+	.forth-div {
+		display: block;
+	}
+	.fifth-div {
+		display: none;
+	}
+
+	.first-font {
+		font-family: 'digital-7', sans-serif;
+		font-size: 4em;
+	}
+	.second-font {
+		font-family: 'digital-7', sans-serif;
+		font-size: 10em;
+	}
+	.n-font {
+		font-size: 25px;
+		margin-bottom: -20px;
+	}
+	.maL-left {
+		margin-left: 0px;
+	}
+	.maL--left {
+		margin-left: 0px;
+	}
+	.t-font {
+		font-size: 25px;
+		margin-bottom: -40px;
+	}
+	.result-h {
+		font-family: 'digital-7', sans-serif;
+		font-size: 45px;
+	}
+	.result-d {
+		color: lightgrey;
+		font-size: 35px;
+	}
+	.result-t {
+		color: lightgray;
+		font-size: 35px;
+	}
+	/* #clubname {
+		font-size: 35px;
+	} */
+	#clubnamediv {
+		text-align: center !important;
+	}
+	.batsman-class {
+		margin-top: -20px;
+		margin-left: -50px;
+	}
+	.batsman-scores {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: large;
+	}
+	.to-win-class {
+		margin-top: 50px;
+	}
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) {
+	 .font-top {
+		 font-size: 24px;
+	 }
+	 .font-bot {
+		 font-size: 28px;
+		 font-family: Orbitron, sans-serif;
+	 }
+	 .font-bot-over {
+		 font-size: 22px;
+		 font-family: Orbitron, sans-serif;
+	 }
+	 .font-score {
+		 font-size: 31px;
+		 font-family: Orbitron, sans-serif;
+	 }
+
+
+
+
+
+	#checkcolor {
+		background: black;
+	}
+	.second-div {
+		display: block;
+	}
+	.forth-div {
+		display: block;
+	}
+	.fifth-div {
+		display: none;
+	}
+
+	.first-font {
+		font-family: 'digital-7', sans-serif;
+		font-size: 6em;
+	}
+	.second-font {
+		font-family: 'digital-7', sans-serif;
+		font-size: 15em;
+	}
+	.n-font {
+		font-size: 30px;
+		margin-bottom: -30px;
+	}
+	.maL-left {
+		margin-left: 10px;
+	}
+	.maL--left {
+		margin-left: -5px;
+	}
+	.t-font {
+		font-size: 30px;
+		margin-bottom: -50px;
+	}
+	.result-h {
+		font-family: 'digital-7', sans-serif;
+		font-size: 50px;
+	}
+	.result-d {
+		color: lightgrey;
+		font-size: 40px;
+	}
+	.result-t {
+		color: lightgray;
+		font-size: 40px;
+	}
+	/* #clubname {
+		font-size: 45px;
+	} */
+	.batsman-class {
+		margin-top: -100px;
+	}
+	.batsman-scores {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: x-large;
+	}
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+	 .font-top {
+		 font-size: 24px;
+	 }
+	 .font-bot {
+		 font-size: 28px;
+		 font-family: Orbitron, sans-serif;
+	 }
+	 .font-bot-over {
+		 font-size: 22px;
+		 font-family: Orbitron, sans-serif;
+	 }
+	 .font-score {
+		 font-size: 38px;
+		 font-family: Orbitron, sans-serif;
+	 }
+
+
+
+
+
+	#checkcolor {
+		background: white;
+	}
+	.second-div {
+		display: block;
+	}
+	.forth-div {
+		display: block;
+	}
+	.fifth-div {
+		display: none;
+	}
+	.first-font {
+		font-family: 'digital-7', sans-serif;
+		font-size: 6em;
+	}
+	.second-font {
+		font-family: 'digital-7', sans-serif;
+		font-size: 15em;
+	}
+	.n-font {
+		font-size: 30px;
+		margin-bottom: -30px;
+	}
+	.maL-left {
+		margin-left: 10px;
+	}
+	.maL--left {
+		margin-left: -5px;
+	}
+	.t-font {
+		font-size: 30px;
+		margin-bottom: -50px;
+	}
+	.result-h {
+		font-family: 'digital-7', sans-serif;
+		font-size: 50px;
+	}
+	.result-d {
+		color: lightgrey;
+		font-size: 40px;
+	}
+	.result-t {
+		color: lightgray;
+		font-size: 40px;
+	}
+	/* #clubname {
+		font-size: 50px;
+	} */
+	.batsman-class {
+		margin-top: -100px;
+	}
+	.batsman-scores {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: x-large;
+	}
+}

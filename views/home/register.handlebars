@@ -1,0 +1,51 @@
+    {{!-- <button onclick="logoutFromRegister()" class="btn btn-sm btn-outline-light">Back</button> --}}
+    <button onclick="logoutFromRegister()" class="btn btn-sm btn-light float-right">LOGOUT</button>
+    <button onclick="refreshTables()" class="btn btn-sm btn-danger">Refresh Tables</button>
+    <button onclick="rebootPi()" class="btn btn-sm btn-warning">Restart System</button>
+    <div class="container mt-3" style="min-height: 300px;">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-1 col-xs-1"></div>
+        <div class="col-lg-6 col-md-6 col-sm-8 col-xs-10">
+          <div class="row">
+            <div class="col-10">
+              <input type="hidden" id="registerId">
+              <input type="text" class="form-control" placeholder="Change / Add PIN" id="registerPINInput">
+            </div>
+            <div class="col-2" id="saveBtn">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        
+        <div class="col-5 mt-4">
+          <h3 class="text-white">Register</h3>
+          <table style="width: 100%;" class="mt-4">
+            <thead id="tHeadOne" class="bg-light text-dark text-center" style="font-size: 18px;">
+              
+            </thead>
+            <tbody id="tBodyOne" class="text-center">
+              
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="col-5 mt-4">
+          <h3 class="text-white">Login</h3>
+          <table class="mt-4" style="width: 100%;">
+            <thead id="tHeadTwo" class="bg-light text-dark text-center" style="font-size: 18px;">
+              
+            </thead>
+            <tbody id="tBodyTwo" class="text-center">
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+		{{!-- footer --}}
+		<div class="row mt-4">
+			<div class="col-3 mt-4 ml-4"></div>
+			<div class="col-lg-5 col-md-6 col-sm-11 col-xs-11 mt-2 text-center text-light" id="clubnamediv"><h5 id="clubname">Cricket Club</h5><h5 id="clubname">@seAfnan</h5></div>
+		</div>

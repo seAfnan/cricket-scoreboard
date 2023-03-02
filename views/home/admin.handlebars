@@ -1,0 +1,285 @@
+		{{!-- <div id="checkcolor" style="height: 10px; width: 100px;"></div> --}}
+		<button onclick="registerModal()" id="registerBtn" class="btn btn-sm btn-outline-light">REGISTER</button>
+		<button onclick="logoutFromLogin()" class="btn btn-sm btn-light float-right">LOGOUT</button>
+		<div id="result" style="display: none;">
+			<div class="row">
+				<div class="col-lg-2 col-md-1 col-sm-1 col-0"></div>
+				<div class="col-lg-10 col-md-10 col-sm-10 col-10 final-result"></div>
+			</div>
+			<div class="row">
+				<div class="col-lg-2 col-md-1 col-sm-1 col-0"></div>
+				<div class="col-lg-5 col-md-5 col-sm-5 col-10">
+					<div class="result-t teamOneName">One Team one name here to check</div>
+					<div class="result-h"><span>Score:</span> <span class="result-d result-score-1">234</span></div>
+					<div class="result-h"><span>Wickets:</span> <span class="result-d result-wicket-1">04</span></div>
+					<!-- <div class="result-h"><span>Overs:</span> <span class="result-d result-over-1">24</span></div> -->
+				</div>
+				<div class="col-lg-5 col-md-5 col-sm-5 col-10">
+					<div class="result-t teamTwoName">One Team two name here to check</div>
+					<div class="result-h"><span>Score:</span> <span class="result-d result-score-2">234</span></div>
+					<div class="result-h"><span>Wickets:</span> <span class="result-d result-wicket-2">04</span></div>
+					<!-- <div class="result-h"><span>Overs:</span> <span class="result-d result-over-2">24</span></div> -->
+				</div>
+			</div>
+		</div>
+
+		{{!-- <div class="row hideRow">
+			<div class="col-lg-1 col-md-0 col-sm-0 col-0 first-div"></div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-4 first-font second-div">
+				<div class="n-font n-fontt text-left" style="letter-spacing: 2px;">Overs<span style="font-size: 20px; font-family: verdana;" class="tOvers"></span></div><span class="overId">00</span>
+				<div class="n-font to-win-class text-left" style="letter-spacing: 2px;">To win</div><span class="toWin">000</span>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-12 second-font third-div">
+				<div class="t-font text-left" style="letter-spacing: 2px;">Team Name here</div><span id="scoreId">000</span>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-1 first-font fifth-div"></div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-5 first-font fifth-div">
+				<div class="n-font text-left" style="letter-spacing: 2px;">Overs<span style="font-size: 20px; font-family: verdana;" class="tOvers"></span></div><span class="overId">00</span>
+				<div class="n-font to-win-class text-left">To win</div><span class="toWin">000</span>
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2 col-5 first-font forth-div div-right">
+				<div class="n-font text-left" style="letter-spacing: 2px;">Wickets</div><span class="wicketsId">00</span>
+				<div class="n-font to-win-class text-left" style="letter-spacing: 3px;">Target</div><span id="targetId">000</span>
+			</div>
+			<div class="col-12 batsman-class first-font">
+				<div class="row">
+					<div class="col-6 text-center">
+						<span class="n-font" style="letter-spacing: 2px;">BATSMAN </span><span class="n-font text-warning" id="batsmanOneId"> 0 </span><span class="batsman-scores" id="batsmanOneScore">(0)</span>
+					</div>
+					<div class="col-6 text-center">
+						<span class="n-font" style="letter-spacing: 2px;">BATSMAN </span><span class="n-font text-warning" id="batsmanTwoId"> 0 </span><span class="batsman-scores" id="batsmanTwoScore">(0)</span>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 batsman-class first-font">
+				<div class="col-12 text-center">
+					<span class="n-font" style="letter-spacing: 2px;">LASTMAN </span><span class="batsman-scores" id="lastmanScore">(0)</span>
+				</div>
+			</div>
+		</div> --}}
+
+		<div class="row hideRow">
+			<div class="col-12 text-center">
+				<div class="row">
+					<div class="col-4"></div>
+					<div class="col-4 font-bot" style="margin-top: -25px;" id="teamName">Team Name</div>
+					<div class="col-4"></div>
+				</div>
+				<div class="row pl-4 pr-4 pb-2 pt-2">
+					<div class="col-4 font-top heading-border">BAT- 1<span class="batsmanOneClass"></span></div>
+					<div class="col-4 font-top heading-border">TOTAL</div>
+					<div class="col-4 font-top heading-border">BAT- 2<span class="batsmanTwoClass"></span></div>
+				</div>
+				<div class="row pl-4 pr-4 pb-3 pt-1">
+					<div class="col-4 font-bot bot-border"><span id="batsmanOneScore">00</span></div>
+					<div class="col-4 font-bot" style="background: hsla(150, 95%, 15%, 1);" id="scoreId">000</div>
+					<div class="col-4 font-bot bot-border"><span id="batsmanTwoScore">00</span></div>
+				</div>
+				<div class="row pl-4 pr-4 pb-2">
+					<div class="col-4 font-top heading-border">LASTMAN</div>
+					<div class="col-4 font-top heading-border">WKTS</div>
+					<div class="col-4 font-top heading-border">1st INNS</div>
+				</div>
+				<div class="row pl-4 pr-4 pb-2 pt-1">
+					<div class="col-4 font-bot bot-border"><span id="lastmanScore">00</span></div>
+					<div class="col-4 font-bot bot-border"><span id="wicketId">00</span></div>
+					<div class="col-4 font-bot bot-border"><span id="targetId">000</span></div>
+				</div>
+				<div class="row pl-4 pr-4 pb-4">
+					<div class="col-4 font-top border-left">OVERS<h6 class="font-bot-over"><span id="overId">00</span> / <span id="totalOvers"></span></h6></div>
+					<div class="col-4 font-top border-left border-right">EXTRA <h6 class="font-bot" id="extraScore">00</h6></div>
+					<div class="col-4 font-top border-right">TO WIN <h6 class="font-bot" id="toWinId">00</h6></div>
+				</div>
+			</div>
+		</div>
+
+		{{!-- <h4 class="text-danger" id="loggedOutNoti"></h4> --}}
+		
+		<button style="display: none;" onclick="makeTables()" class="btn btn-light">make tables</button>
+		<button style="display: none;" onclick="clearHistory()" class="btn btn-light">clear history</button>
+
+		<div class="row button-div mr-1">
+			<div><h5 class="hideButtons mt-3 ml-2">BAT <span class="batsmanOneClass"></span></h5></div>
+			<div><button onclick="oneScoreP1()" class="btn btn-success mt-2 ml-4 hideButtons" style="display: none;">+1</button></div>
+			<div><button onclick="twoScoreP1()" class="btn btn-success ml-3 mt-2 hideButtons" style="display: none;">+2</button></div>
+			<div><button onclick="threeScoreP1()" class="btn btn-success ml-3 mt-2 hideButtons" style="display: none;">+3</button></div>
+			<div><button onclick="fourScoreP1()" class="btn btn-success ml-3 mt-2 hideButtons" style="display: none;">+4</button></div>
+			<div><button onclick="fiveScoreP1()" class="btn btn-success ml-3 mt-2 hideButtons" style="display: none;">+5</button></div>
+			<div><button onclick="sixScoreP1()" class="btn btn-success ml-3 mt-2 hideButtons" style="display: none;">+6</button></div>
+			<div><button onclick="outP1()" class="btn btn-danger ml-3 mt-2 hideButtons" style="display: none;">Out</button></div>
+		</div>
+
+		<div class="row button-div mr-1 marTopDiv">
+			<div><h5 class="hideButtons mt-3 ml-2">BAT <span class="batsmanTwoClass"></span></h5></div>
+			<div><button onclick="oneScoreP2()" class="btn btn-success mt-2 ml-4 hideButtons" style="display: none;">+1</button></div>
+			<div><button onclick="twoScoreP2()" class="btn btn-success ml-3 mt-2 hideButtons" style="display: none;">+2</button></div>
+			<div><button onclick="threeScoreP2()" class="btn btn-success ml-3 mt-2 hideButtons" style="display: none;">+3</button></div>
+			<div><button onclick="fourScoreP2()" class="btn btn-success ml-3 mt-2 hideButtons" style="display: none;">+4</button></div>
+			<div><button onclick="fiveScoreP2()" class="btn btn-success ml-3 mt-2 hideButtons" style="display: none;">+5</button></div>
+			<div><button onclick="sixScoreP2()" class="btn btn-success ml-3 mt-2 hideButtons" style="display: none;">+6</button></div>
+			<div><button onclick="outP2()" class="btn btn-danger ml-3 mt-2 hideButtons" style="display: none;">Out</button></div>
+		</div>
+
+		<div class="row button-div mr-1 marTopDiv">
+			<div><h5 class="hideButtons mt-3 ml-2">LB/B/etc</h5></div>
+			<div><button onclick="byeOneScore()" class="btn btn-success mt-2 ml-2 hideButtons" style="display: none;">+1</button></div>
+			<div><button onclick="byeTwoScore()" class="btn btn-success ml-3 mt-2 hideButtons" style="display: none;">+2</button></div>
+			<div><button onclick="byeThreeScore()" class="btn btn-success ml-3 mt-2 hideButtons" style="display: none;">+3</button></div>
+			<div><button onclick="byeFourScore()" class="btn btn-success ml-3 mt-2 hideButtons" style="display: none;">+4</button></div>
+			<div><button onclick="byeFiveScore()" class="btn btn-success ml-3 mt-2 hideButtons" style="display: none;">+5</button></div>
+			<div><button onclick="wide()" class="btn btn-danger ml-3 mt-2 hideButtons" style="display: none;">WD</button></div>
+			<div><button onclick="noBall()" class="btn btn-danger ml-3 mt-2 hideButtons" style="display: none;">NB</button></div>
+		</div>
+
+		<div class="row button-div mr-1 marTopDiv">
+			<div><h5 class="hideButtons mt-3 ml-2">Actions</h5></div>
+			<div><button onclick="nextBall()" class="btn btn-success mt-2 ml-3 hideButtons" style="display: none;">+Ball</button></div>
+			{{!-- <div><button onclick="nextOver()" class="btn btn-success ml-3 mt-2 hideButtons" style="display: none;">+Over</button></div> --}}
+			<div><button onclick="minusBall()" class="btn btn-danger ml-3 mt-2 hideButtons" style="display: none;">-Ball</button></div>
+			<div><button onclick="oneStepBack()" class="btn btn-light ml-3 mt-2 hideButtons" style="display: none;">Undo</button></div>
+			<div id="nextTeamDiv"><button onclick="nextTeamPermission()" class="btn btn-dark ml-3 mt-2 nextTeamBtn" style="display: none;">Next Team</button></div>
+			<div id="showResultDiv" style="display: none;"><button onclick="showResult()" class="btn btn-dark ml-3 mt-2 showResultBtn">Show Result</button></div>
+			<div><button onclick="newMatch()" class="btn btn-light ml-3 mt-2 newMatchBtn" style="margin-left: 25px;">New Match</button></div>
+			<div><button onclick="endMatchModal()" class="btn btn-dark ml-3 mt-2 hideButtons endMatchBtn" style="display: none; ">New Match</button></div>
+		</div>
+
+		<div class="row button-div mr-1 marTopDiv">
+			<div><h5 class="hideButtons mt-3 ml-2">Board Control</h5></div>
+			<div><button onclick="turnOffBoard()" id="OFFBtn" class="btn btn-warning ml-4 mt-2">OFF</button></div>
+			<div><button onclick="turnOnBoard()" id="ONBtn" class="btn btn-warning ml-3 mt-2">ON</button></div>
+			<div><button onclick="testBoard_1()" id="testBoard_1" class="btn btn-primary ml-3 mt-2">Test 1</button></div>
+			<div><button onclick="testBoard_2()" id="testBoard_2" class="btn btn-primary ml-3 mt-2">Test 2</button></div>
+		</div>
+
+		<div class="row button-div mr-1 marTopDiv" id="matchActionDiv">
+			<div><h5 class="hideButtons mt-3 ml-2">Match Control</h5></div>
+			<div><button onclick="changeOverFunc()" id="changeOverBtn" class="btn btn-danger ml-4 mt-2">Change Overs</button></div>
+			<div class="col-4 changeOverClass"><input type="text" maxlength="2" id="totalOversInput" class="form-control ml-2 mt-2"></div>
+			<div class="changeOverClass"><button onclick="changeOverPost()" class="btn btn-success mt-2">Save</button></div>
+			<div><button onclick="changeTargetFunc()" id="changeTargetBtn" class="btn btn-danger ml-3 mt-2">Change Target</button></div>
+			<div class="col-4 changeTargetClass"><input type="text" id="totalTargetInput" class="form-control ml-2 mt-2"></div>
+			<div class="changeTargetClass"><button onclick="changeTargetPost()" class="btn btn-success mt-2">Save</button></div>
+		</div>
+
+		<!-- The Modal -->
+		<div class="modal fade" id="registerModal" style="color: black;">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+
+		      <!-- Modal Header -->
+		      <div class="modal-header">
+		        <h5 class="modal-title">Admin</h5>
+		      </div>
+
+		      <!-- Modal body -->
+		      <div class="modal-body">
+		        <div class="form-group">
+						  <input type="password" class="form-control" onchange="register()" id="pin2" placeholder="Admin PIN">
+						</div>
+		      </div>
+
+		      <!-- Modal footer -->
+		      <div class="modal-footer">
+		        <h6 class="text-danger" id="registerPINError"></h6>
+		      </div>
+
+		    </div>
+		  </div>
+		</div>
+
+		<!-- The Modal -->
+		<div class="modal fade" id="newMatchModal" style="color: black;">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <!-- Modal Header -->
+		      <div class="modal-header">
+		        <h5 class="modal-title">Register a new team here</h5>
+		      </div>
+					<!-- Modal body -->
+					<div class="modal-body">
+						<div class="form-group">
+							<input type="text" class="form-control" name="teamOne" id="teamOne" maxlength="30" placeholder="Team One Name">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" name="teamTwo" id="teamTwo" maxlength="30" placeholder="Team Two Name">
+						</div>
+						<div class="form-group">
+							<input type="text" maxlength="2" class="form-control onlyNum" name="totalOversInp" id="totalOversInp" placeholder="How many overs ?">
+						</div>
+					</div>
+					<!-- Modal footer -->
+					<div class="modal-footer">
+						<button onclick="registerTeams()" class="btn btn-success">OK</button>
+					</div>
+		    </div>
+		  </div>
+		</div>
+
+		<!-- The Modal -->
+		<div class="modal fade" id="nextTeamModal" style="color: black;">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <!-- Modal Header -->
+		      <div class="modal-header">
+		        <h5 class="modal-title">Next team is going to play !</h5>
+		      </div>
+		      <!-- Modal body -->
+		      <div class="modal-body">
+		        
+		      </div>
+		      <!-- Modal footer -->
+		      {{!-- <div class="modal-footer">
+		      	<button type="submit" onclick="nextTeamNoti()" class="btn btn-success">OK</button>
+		      </div> --}}
+		    </div>
+		  </div>
+		</div>
+
+		<!-- The Modal -->
+		<div class="modal fade" id="nextTeamNoti" style="color: black;">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <!-- Modal Header -->
+		      <div class="modal-header">
+		        <h5 class="modal-title">Start Next Team to Play ? <span class="text-danger">if YES press OK</span></h5>
+		      </div>
+		      <!-- Modal body -->
+		      <div class="modal-body">
+		        
+		      </div>
+		      <!-- Modal footer -->
+		      <div class="modal-footer">
+		      	<button type="submit" onclick="nextTeam()" class="btn btn-success">OK</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<!-- The Modal -->
+		<div class="modal fade" id="endMatchModal" style="color: black;">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+
+		      <!-- Modal Header -->
+		      <div class="modal-header">
+		        <h5 class="modal-title">Do you really want to <span class="text-danger">Exit</span> and start a <span class="text-success"> New Match ??</span></h5>
+		      </div>
+
+		      <!-- Modal body -->
+		      <div class="modal-body">
+		        
+		      </div>
+
+		      <!-- Modal footer -->
+		      <div class="modal-footer">
+		      	<button type="submit" onclick="endMatch()" class="btn btn-success">YES</button>
+		      </div>
+
+		    </div>
+		  </div>
+		</div>
+
+		<div class="row mt-4">
+			<div class="col-lg-3 col-md-3 col-sm-1 col-xs-1 mt-4"></div>
+			<div class="col-lg-5 col-md-6 col-sm-11 col-xs-11 mt-2 text-center text-light" id="clubnamediv"><h5 id="clubname">Cricket Club</h5><h5 id="clubname">@seAfnan</h5></div>
+		</div>
