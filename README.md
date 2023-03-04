@@ -1,4 +1,4 @@
 # cricket-scoreboard
-I have developed Cricket Scoreboard in NodeJs, SQLite and Python(to handle hardware).
+Simple Cricket Scoreboard in NodeJs, SQLite and Python(to handle hardware).
 
-[Imgur](https://i.imgur.com/uQ1xYno.gifv)
+<a href="https://imgur.com/8OpC2Ft"><img src="https://i.imgur.com/8OpC2Ft.gif" title="source: imgur.com" /></a>
